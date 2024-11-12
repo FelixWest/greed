@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Greed - Dice Game</h1>
+
+      <!-- Goal display -->
+      <div id="goal" class="goal">First to reach 5000 points wins!</div>
+
+      <!-- Current player indicator -->
+      <div id="current-player" class="current-player">
+        Current Turn: Player 1
+      </div>
+      <div id="current-round-score" class="score">Current Round Score: 0</div>
+
+      <div id="dice-container" class="dice-container">
+        <!--  default empty , actual values are set in JavaScript -->
+        <div class="dice"></div>
+        <div class="dice"></div>
+        <div class="dice"></div>
+        <div class="dice"></div>
+        <div class="dice"></div>
+      </div>
+
+      <!-- Buttons for roll, hold and restart  -->
+      <button id="roll-button">Roll the Dice!</button>
+      <button id="hold-button" style="display: none">Hold</button>
+      <button id="restart-button">Restart Game</button>
+
+      <!-- Toggle Button for Rules -->
+      <button id="rules-button">Game Rules</button>
+      <!-- Modal for displaying rules -->
+      <div id="rules-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-modal" class="close-button">&times;</span>
+          <h2>Game Rules</h2>
+          <p>
+            In "Greed," players roll five dice (represented by the letters G, R,
+            E, E, D) to achieve the highest score.
+          </p>
+          <br />
+          <ul>
+            <li>5 of a kind: 2000 points</li>
+            <li>4 of a kind: 2 times the letter value</li>
+            <li>3 of a kind: 1 time the letter value</li>
+            <li>Each "E" rolled: 100 points</li>
+          </ul>
+          <p>The first player to reach 5000 points wins the game!</p>
+          <br />
+          <p>
+            <strong>Important:</strong> You must click <em>Hold</em> after
+            rolling to save your points. If you don't and continue rolling, you
+            risk rolling a <em>farkle</em> (a non-scoring combination) and
+            losing all points from the current round.
+          </p>
+        </div>
+      </div>
+
+      <!-- Score displays, initially hidden -->
+      <div id="scores" style="display: none">
+        <div id="player1-score" class="score">Player 1 Total Score: 0</div>
+        <div id="player2-score" class="score">Player 2 Total Score: 0</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
